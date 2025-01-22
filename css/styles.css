@@ -1,5 +1,6 @@
 body {
     font-family: "Lato", serif;
+    background-color: aquamarine;
 }
 
 main {
@@ -25,6 +26,7 @@ main {
 }
 
 .answer {
+    background-color: mintcream;
     border: 1.5px solid #000;
     padding: 10px 15px;
     border-radius: 6px;
@@ -37,4 +39,23 @@ main {
 .answer:hover {
     background-color: grey;
     color: azure;
+}
+
+h1 {
+    display: none;
+    justify-content: center;
+    background-color: mintcream;
+    border-radius: 5px;
+    padding: 5px 0; 
+}
+
+.btn {
+    width: 100px;
+    height: 25px;
+    background-color: mintcream;
+    border: 1.5px solid #000;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
 }

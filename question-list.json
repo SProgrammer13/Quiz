@@ -1,0 +1,32 @@
+[
+    {
+        "question": "25-20",
+        "correct answer": 5,
+        "answers": [7, 4, 12, 5, 9]
+        
+    },
+    {
+        "question": "2*6",
+        "correct answer": 12,
+        "answers": [12, 80, 43, 14, 10]
+        
+    },
+    {
+        "question":"12+34",
+        "correct answer": 46,
+        "answers": [45, 46, 67, 70, 48]
+        
+    },
+    {
+        "question": "60/6",
+        "correct answer": 10,
+        "answers": [12, 11, 15, 4.7, 10]
+        
+    },
+    {
+        "question": "80/4",
+        "correct answer": 20,
+        "answers": [27, 19.3, 20, 21.1, 5]
+        
+    }
+]

@@ -12,8 +12,13 @@
     
 </head>
 <body>
-<h1>Math quiz</h1>
-<main class="main-screen">
+<main class="start-screen">
+    <h1>Math quiz</h1>
+    <div class='start-btn'>Start Quiz</div>
+</main>
+<main class="main-screen hide">
+<span>Time left: </span>
+<div class="game-timer"></div>
     <div class="question-box">
         <div class="question"></div>
     </div>
@@ -26,7 +31,10 @@
     </div> 
     <button class="skip-btn">Skip</button>         
 </main>
-<main class="end-screen hide">End of quiz!</main>
+<main class="end-screen hide">
+    <h2>End of quiz!</h2>
+    <h2 class="warning hide">TIME OUT!</h2>
+</main>
 <script src="js/script.js"></script>
 </body>
 </html>

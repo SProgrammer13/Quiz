@@ -1,6 +1,7 @@
 body {
     font-family: "Lato", serif;
     background-color: aquamarine;
+    position: relative;
 }
 
 main {
@@ -9,6 +10,10 @@ main {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+
+.end-screen {
+    font-size: 3em;
 }
 
 .show {
@@ -51,11 +56,13 @@ main {
 }
 
 h1 {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 0;
     justify-content: center;
     background-color: mintcream;
     border-radius: 5px;
-    padding: 5px 0; 
+    padding: 0px 100px; 
 }
 
 .skip-btn {
@@ -75,4 +82,34 @@ h1 {
 
 .incorrect {
     background-color: rgb(255, 0, 0);
+}
+
+.game-timer {
+    position: absolute;
+    top: 30px;
+    font-size: 1.7em;
+    background-color: #fff;
+    padding:5px 80px;
+    border: 2px solid #000;
+}
+
+span {
+    font-size: 1.4em;
+    margin: 5px;
+    position: absolute;
+    top: -5px;
+}
+
+
+.start-btn {
+    font-size: 1.7em;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+.warning {
+    color: red;
+    font-size: 2em;
 }

@@ -6,12 +6,13 @@ const answerList = document.querySelectorAll('.answer');
 const startBtn = document.querySelector('.start-btn');
 const skipBtn = document.querySelector('.skip-btn');
 const gameTimerEl = document.querySelector('.game-timer');
-const warning = document.querySelector('.warning');
+const result = document.querySelector('.result');
 let currentQuestion;
 let questions;
 let currentIndex = 0;
 let points = 0;
 let timer = 10;
+let timerInt;
 
 startBtn.addEventListener('click', startQuiz);
 
@@ -19,15 +20,18 @@ function startQuiz(){
         gameTimerEl.textContent = timer;
         mainScreen.classList.remove('hide');
         startScreen.classList.add('hide');  
-        setInterval(startTimer, 1000);
+        timerInt = setInterval(startTimer, 1000);
 }
 
 function startTimer(){
         timer--;
         gameTimerEl.textContent = timer;
-        if(timer < 0){
+        if(timer <= 0){
             endQuiz();
             gameTimerEl.textContent = 0;
+            result.textContent = 'Time is out!';
+            result.classList.add('warning');
+
         }
 }
 
@@ -48,7 +52,7 @@ function checkAnswer(e){
     }
     setTimeout(() => {
         answer.classList.remove('correct', 'incorrect');
-    }, 1000)
+    }, 500)
 
     nextQuestion();
 }
@@ -63,6 +67,7 @@ function showQuestion(question){
 
 function nextQuestion(){
     if(currentIndex >= questions.length){
+        result.textContent ='Your result:' + points;
         endQuiz();
     }
     else {
@@ -75,6 +80,7 @@ function nextQuestion(){
 function endQuiz(){
     mainScreen.classList.add('hide');
     endScreen.classList.remove('hide');
+    clearInterval(timerInt);
 }
 
 getQuestions().then(questionsData => {

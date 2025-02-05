@@ -10,6 +10,7 @@ main {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    text-align: center;
 }
 
 .end-screen {
@@ -36,6 +37,7 @@ main {
     margin: 5px;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .answer {
@@ -45,7 +47,7 @@ main {
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.4em;
-    transition: 0.5s;
+    transition: 0.3s;
     
 }
 
@@ -76,11 +78,11 @@ h1 {
     margin-top: 20px;
 }
 
-.correct {
+.correct, .correct:hover {
     background-color: rgb(38, 150, 38);
 }
 
-.incorrect {
+.incorrect, .incorrect:hover {
     background-color: rgb(255, 0, 0);
 }
 
@@ -109,7 +111,11 @@ span {
     border: 1px solid #000;
 }
 
+.result {
+    color: black;
+    font-size: 35px;
+}
+
 .warning {
     color: red;
-    font-size: 2em;
 }

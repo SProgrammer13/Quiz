@@ -18,12 +18,20 @@ let timerInt;
 startBtn.addEventListener('click', startQuiz);
 restartBtn.addEventListener('click', startQuiz)
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
 function startQuiz(){
         points = 0;
         currentIndex = 0;
         timer = 10;
         timerInt = setInterval(startTimer, 1000);
         gameTimerEl.textContent = timer;
+        shuffle(questions);
         showQuestion(questions[currentIndex])
         mainScreen.classList.remove('hide');
         startScreen.classList.add('hide');  
@@ -66,6 +74,7 @@ function checkAnswer(e){
 function showQuestion(question){
     questionEl.textContent = question.question;
     currentQuestion = question;
+    shuffle(question.answers);
     for(let i = 0; i < answerList.length; i++){
         answerList[i].textContent = question.answers[i];
         setTimeout(() => {
@@ -75,7 +84,7 @@ function showQuestion(question){
 }
 
 function nextQuestion(){
-    if(currentIndex >= questions.length){
+    if(currentIndex >= questions.length - 1){
         result.textContent ='Your result:' + points;
         endQuiz();
     }

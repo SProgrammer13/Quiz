@@ -5,6 +5,7 @@ const endScreen = document.querySelector('.end-screen');
 const answerList = document.querySelectorAll('.answer');
 const startBtn = document.querySelector('.start-btn');
 const skipBtn = document.querySelector('.skip-btn');
+const restartBtn = document.querySelector('.restart');
 const gameTimerEl = document.querySelector('.game-timer');
 const result = document.querySelector('.result');
 let currentQuestion;
@@ -15,12 +16,17 @@ let timer = 10;
 let timerInt;
 
 startBtn.addEventListener('click', startQuiz);
+restartBtn.addEventListener('click', startQuiz)
 
 function startQuiz(){
+        points = 0;
+        currentIndex = 0;
+        timer = 10;
+        timerInt = setInterval(startTimer, 1000);
         gameTimerEl.textContent = timer;
+        showQuestion(questions[currentIndex])
         mainScreen.classList.remove('hide');
         startScreen.classList.add('hide');  
-        timerInt = setInterval(startTimer, 1000);
 }
 
 function startTimer(){
@@ -62,6 +68,9 @@ function showQuestion(question){
     currentQuestion = question;
     for(let i = 0; i < answerList.length; i++){
         answerList[i].textContent = question.answers[i];
+        setTimeout(() => {
+            answerList[i].classList.remove('correct', 'incorrect');
+        }, 500)
     }
 }
 

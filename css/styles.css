@@ -1,10 +1,11 @@
 body {
     font-family: "Lato", serif;
     background-color: aquamarine;
-    position: relative;
+    margin: 0;
 }
 
 main {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -59,12 +60,10 @@ main {
 
 h1 {
     display: block;
+    background-color: mintcream;
     position: absolute;
     top: 0;
-    justify-content: center;
-    background-color: mintcream;
-    border-radius: 5px;
-    padding: 0px 100px; 
+    width: 100%;
 }
 
 .skip-btn {
@@ -109,6 +108,7 @@ span {
     cursor: pointer;
     padding: 5px;
     border: 1px solid #000;
+    border-radius: 6px;
 }
 
 .result {
@@ -118,4 +118,13 @@ span {
 
 .warning {
     color: red;
+}
+
+.restart {
+   font-size: 1.7rem;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 6px;
 }

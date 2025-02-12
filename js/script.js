@@ -13,7 +13,7 @@ let currentQuestion;
 let questions;
 let currentIndex = 0;
 let points = 0;
-let timer = 10;
+let timer = 20;
 let timerInt;
 let maxPoints = parseInt(localStorage.getItem('maxPoints') || 0);
 
@@ -91,6 +91,7 @@ function nextQuestion(){
             maxPoints = points;
             localStorage.setItem('maxPoints', maxPoints);
         }
+        result.classList.remove('warning');
         
         result.textContent ='Your result:' + points;
         maxResult.textContent = 'Best score:' + maxPoints;

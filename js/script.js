@@ -8,12 +8,14 @@ const skipBtn = document.querySelector('.skip-btn');
 const restartBtn = document.querySelector('.restart');
 const gameTimerEl = document.querySelector('.game-timer');
 const result = document.querySelector('.result');
+const maxResult = document.querySelector('.max-result');
 let currentQuestion;
 let questions;
 let currentIndex = 0;
 let points = 0;
 let timer = 10;
 let timerInt;
+let maxPoints = parseInt(localStorage.getItem('maxPoints') || 0);
 
 startBtn.addEventListener('click', startQuiz);
 restartBtn.addEventListener('click', startQuiz)
@@ -85,7 +87,13 @@ function showQuestion(question){
 
 function nextQuestion(){
     if(currentIndex >= questions.length - 1){
+        if(points > maxPoints){
+            maxPoints = points;
+            localStorage.setItem('maxPoints', maxPoints);
+        }
+        
         result.textContent ='Your result:' + points;
+        maxResult.textContent = 'Best score:' + maxPoints;
         endQuiz();
     }
     else {

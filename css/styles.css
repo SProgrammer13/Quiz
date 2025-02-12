@@ -116,6 +116,11 @@ span {
     font-size: 35px;
 }
 
+.max-result {
+    color: black;
+    font-size: 35px;
+}
+
 .warning {
     color: red;
 }

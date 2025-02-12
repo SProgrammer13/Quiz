@@ -30,7 +30,7 @@ function shuffle(array) {
 function startQuiz(){
         points = 0;
         currentIndex = 0;
-        timer = 10;
+        timer = 20;
         timerInt = setInterval(startTimer, 1000);
         gameTimerEl.textContent = timer;
         shuffle(questions);
